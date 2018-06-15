@@ -3,12 +3,16 @@
 ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="/boot/vmlinuz-4.14-x86_64"
 
-PRESETS=('default' 'fallback')
+PRESETS=('default' 'normal' 'fallback')
 
 #default_config="/etc/mkinitcpio.conf"
 default_image="/boot/initramfs-4.14-x86_64.img"
-#default_options=""
+default_options="-S block,mdadm_udev,filesystems,keyboard,fsck,consolefont"
 
 #fallback_config="/etc/mkinitcpio.conf"
 fallback_image="/boot/initramfs-4.14-x86_64-fallback.img"
 fallback_options="-S autodetect"
+
+#normal_config="/etc/mkinitcpio.conf"
+normal_image="/boot/initramfs-linux-normal.img"
+#normal_options=""
