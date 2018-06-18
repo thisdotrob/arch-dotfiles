@@ -6,6 +6,20 @@ exec --no-startup-id xrandr --dpi 192
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
+## Manual management of external displays
+# Set the shortcuts and what they do
+set $mode_display Ext Screen (v) DP1 ON, (x) DP1 OFF
+mode "$mode_display" {
+    bindsym v exec --no-startup-id xrandr --output DP1 --scale 2x2 --panning 5120x2880+3200+0 --mode 2560x1440 --auto --right-of eDP1, mode "default"
+    bindsym x exec --no-startup-id xrandr --output DP1 --auto --off, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+x mode "$mode_display"
+
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
@@ -143,14 +157,41 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
+set $ws1 0:1
+set $ws2 0:2
+set $ws3 0:3
+set $ws4 0:4
+set $ws5 0:5
+set $ws6 0:6
+set $ws7 0:7
+set $ws8 0:8
+
+set $ws9 1:1
+set $ws10 1:2
+set $ws11 1:3
+set $ws12 1:4
+set $ws13 1:5
+set $ws14 1:6
+set $ws15 1:7
+set $ws16 1:8
+
+workspace $ws1 output eDP1
+workspace $ws2 output eDP1
+workspace $ws3 output eDP1
+workspace $ws4 output eDP1
+workspace $ws5 output eDP1
+workspace $ws6 output eDP1
+workspace $ws7 output eDP1
+workspace $ws8 output eDP1
+
+workspace $ws9 output DP1
+workspace $ws10 output DP1
+workspace $ws11 output DP1
+workspace $ws12 output DP1
+workspace $ws13 output DP1
+workspace $ws14 output DP1
+workspace $ws15 output DP1
+workspace $ws16 output DP1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -162,6 +203,15 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
+bindsym Mod1+1 workspace $ws9
+bindsym Mod1+2 workspace $ws10
+bindsym Mod1+3 workspace $ws11
+bindsym Mod1+4 workspace $ws12
+bindsym Mod1+5 workspace $ws13
+bindsym Mod1+6 workspace $ws14
+bindsym Mod1+7 workspace $ws15
+bindsym Mod1+8 workspace $ws16
+
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
@@ -172,6 +222,15 @@ bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 
+bindsym Mod1+Ctrl+1 move container to workspace $ws9
+bindsym Mod1+Ctrl+2 move container to workspace $ws10
+bindsym Mod1+Ctrl+3 move container to workspace $ws11
+bindsym Mod1+Ctrl+4 move container to workspace $ws12
+bindsym Mod1+Ctrl+5 move container to workspace $ws13
+bindsym Mod1+Ctrl+6 move container to workspace $ws14
+bindsym Mod1+Ctrl+7 move container to workspace $ws15
+bindsym Mod1+Ctrl+8 move container to workspace $ws16
+
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
@@ -181,6 +240,15 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+bindsym Mod1+Shift+1 move container to workspace $ws9; workspace $ws9
+bindsym Mod1+Shift+2 move container to workspace $ws10; workspace $ws10
+bindsym Mod1+Shift+3 move container to workspace $ws11; workspace $ws11
+bindsym Mod1+Shift+4 move container to workspace $ws12; workspace $ws12
+bindsym Mod1+Shift+5 move container to workspace $ws13; workspace $ws13
+bindsym Mod1+Shift+6 move container to workspace $ws14; workspace $ws14
+bindsym Mod1+Shift+7 move container to workspace $ws15; workspace $ws15
+bindsym Mod1+Shift+8 move container to workspace $ws16; workspace $ws16
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
