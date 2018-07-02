@@ -3,6 +3,7 @@
     frame_color = "#788388"
     
     font = Noto Sans 18
+    # font = Noto Sans 11
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
