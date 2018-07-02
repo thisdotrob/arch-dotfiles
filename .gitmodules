@@ -1,3 +1,6 @@
 [submodule "home/rs/.vim/pack/rs/start/ctrlp"]
 	path = home/rs/.vim/pack/rs/start/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "home/rs/.vim/pack/rs/start/vim-surround"]
+	path = home/rs/.vim/pack/rs/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
