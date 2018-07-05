@@ -18,3 +18,4 @@ runtime! archlinux.vim
 "let skip_defaults_vim=1
 
 set nowrap
+set number
