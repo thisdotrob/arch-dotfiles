@@ -4,3 +4,9 @@
 [submodule "home/rs/.vim/pack/rs/start/vim-surround"]
 	path = home/rs/.vim/pack/rs/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "home/rs/.vim/pack/rs/start/vim-snazzy"]
+	path = home/rs/.vim/pack/rs/start/vim-snazzy
+	url = https://github.com/connorholyday/vim-snazzy.git
+[submodule "home/rs/.vim/pack/rs/start/lightline"]
+	path = home/rs/.vim/pack/rs/start/lightline
+	url = https://github.com/itchyny/lightline.vim

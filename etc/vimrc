@@ -19,3 +19,11 @@ runtime! archlinux.vim
 
 set nowrap
 set number
+set laststatus=2
+set noshowmode
+let g:SnazzyTransparent = 1
+colorscheme snazzy
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:lightline = {
+\ 'colorscheme': 'snazzy',
+\ }
