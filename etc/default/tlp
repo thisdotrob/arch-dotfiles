@@ -57,7 +57,7 @@ MAX_LOST_WORK_SECS_ON_BAT=60
 # Values are given in order of increasing power saving.
 # Note: Intel Skylake or newer CPU and Kernel >= 4.10 required.
 CPU_HWP_ON_AC=performance
-CPU_HWP_ON_BAT=balance_power
+CPU_HWP_ON_BAT=performance
 
 # Set Intel P-state performance: 0..100 (%).
 # Limit the max/min P-state to control the power dissipation of the CPU.
@@ -79,7 +79,7 @@ CPU_HWP_ON_BAT=balance_power
 # Minimize number of used CPU cores/hyper-threads under light load conditions:
 #   0=disable, 1=enable.
 SCHED_POWERSAVE_ON_AC=0
-SCHED_POWERSAVE_ON_BAT=1
+SCHED_POWERSAVE_ON_BAT=0
 
 # Kernel NMI Watchdog:
 #   0=disable (default, saves power), 1=enable (for kernel debugging only).
@@ -96,7 +96,7 @@ NMI_WATCHDOG=0
 # Values are given in order of increasing power saving.
 # Requires kernel module msr and x86_energy_perf_policy from linux-tools.
 ENERGY_PERF_POLICY_ON_AC=performance
-ENERGY_PERF_POLICY_ON_BAT=power
+ENERGY_PERF_POLICY_ON_BAT=performance
 
 # Disk devices; separate multiple devices with spaces (default: sda).
 # Devices can be specified by disk ID also (lookup with: tlp diskid).
@@ -164,7 +164,7 @@ RADEON_DPM_PERF_LEVEL_ON_BAT=auto
 
 # WiFi power saving mode: on=enable, off=disable; not supported by all adapters.
 WIFI_PWR_ON_AC=off
-WIFI_PWR_ON_BAT=on
+WIFI_PWR_ON_BAT=off
 
 # Disable wake on LAN: Y/N.
 WOL_DISABLE=Y
@@ -172,7 +172,7 @@ WOL_DISABLE=Y
 # Enable audio power saving for Intel HDA, AC97 devices (timeout in secs).
 # A value of 0 disables, >=1 enables power saving (recommended: 1).
 SOUND_POWER_SAVE_ON_AC=0
-SOUND_POWER_SAVE_ON_BAT=1
+SOUND_POWER_SAVE_ON_BAT=0
 
 # Disable controller too (HDA only): Y/N.
 SOUND_POWER_SAVE_CONTROLLER=Y
@@ -211,11 +211,11 @@ USB_AUTOSUSPEND=0
 
 # Bluetooth devices are excluded from USB autosuspend:
 #   0=do not exclude, 1=exclude.
-USB_BLACKLIST_BTUSB=0
+USB_BLACKLIST_BTUSB=1
 
 # Phone devices are excluded from USB autosuspend:
 #   0=do not exclude, 1=exclude (enable charging).
-USB_BLACKLIST_PHONE=0
+USB_BLACKLIST_PHONE=1
 
 # Printers are excluded from USB autosuspend:
 #   0=do not exclude, 1=exclude.
@@ -238,7 +238,7 @@ USB_BLACKLIST_WWAN=1
 # on system startup: 0=disable, 1=enable.
 # Hint: the parameters DEVICES_TO_DISABLE/ENABLE_ON_STARTUP/SHUTDOWN below
 #   are ignored when this is enabled!
-RESTORE_DEVICE_STATE_ON_STARTUP=0
+RESTORE_DEVICE_STATE_ON_STARTUP=1
 
 # Radio devices to disable on startup: bluetooth, wifi, wwan.
 # Separate multiple devices with spaces.
