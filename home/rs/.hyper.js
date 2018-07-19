@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 10,
 
     // font family with optional fallbacks
     fontFamily: '"Inconsolata for Powerline"',
@@ -61,7 +61,7 @@ module.exports = {
     showWindowControls: false,
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '5px 5px',
+    padding: '0px 0px 0px 0px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide

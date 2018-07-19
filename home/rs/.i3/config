@@ -1,6 +1,9 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Default to built-in monitor only
+exec --no-startup-id xrandr --dpi 280 --output eDP1 --auto --output DP1 --off
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -21,7 +24,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:URWGothic-Book 10
+font xft:URWGothic-Book 8
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -333,7 +336,6 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	font xft:URWGothic-Book 10
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
@@ -378,8 +380,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer -4
+gaps inner 0
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -429,3 +431,19 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# Set monitor switching features
+set $mode_display (b)uilt-in, (d)ual, (e)xternal
+
+mode "$mode_display" {
+    bindsym d exec xrandr --output eDP1 --auto --output DP1 --mode 2560x1440 --pos 3200x0 --scale 2x2 --panning 5120x2880+3200+0
+    bindsym b exec xrandr --output eDP1 --auto --output DP1 --off
+    bindsym e exec xrandr --output eDP1 --off  --output DP1 --mode 2560x1440 --pos 0x0 --scale 2x2 --panning 5120x2880 --output eDP1 --off
+
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+x mode "$mode_display"
